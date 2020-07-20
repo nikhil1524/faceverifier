@@ -1,0 +1,33 @@
+{% extends 'faceverifier/base.html' %}
+{% load bootstrap4 %}
+{% load static %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="col-12">
+            <h1> Image upload</h1>
+            <div class="card">
+                <div class="card-header">
+                    API Key
+                </div>
+                <div class="card-body">
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <input type="submit" class="btn btn-primary" name="" value="Upload"><br><br>
+                    </form>
+                    {% if no_face_detected %}
+                        <br><br>
+                        <h5>No face Detected:(</h5>
+                    {% elif more_than_one_face_detected %}
+                        <h5>More than one face detected:(</h5>
+                    {% elif img_obj %}
+                        <h5>Succesfully uploaded for: {{ img_obj.clientId }} :)</h5>
+                        <img src="{{ img_obj.image.url }}" alt="connect" style="max-height:300px">
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

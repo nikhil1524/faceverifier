@@ -1,0 +1,73 @@
+{% extends 'faceverifier/base.html' %}
+{% load bootstrap4 %}
+{% load static %}
+
+{% block content %}
+    <div class="container">
+        <div class="col-6">
+            <h1> Settings</h1>
+            {% if api_key %}
+                <div class="card">
+                    <div class="card-header">
+                        API Key
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">key</h5>
+                        <p class="card-text">In order to use the face verification api you need to send the image file
+                        along with the below api key in the header. If you dont give or give a invalid key you will not be able to use
+                        the face verification api.
+                        <form>
+                            <div class="input-group">
+                                <input type="text" class="form-control"
+                                       value="{{ api_key.apiKey }}" placeholder="API key" id="copy-input">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="button" id="copy-button"
+                                    data-toggle="tooltip" data-placement="top" title="Copy to Clipboard">Copy</button>
+                                </div>
+                            </div>
+                        </form>
+                        </p>
+                        <a href="#" class="btn btn-primary">Try API</a>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+<script>
+   $(document).ready(function() {
+  // Initialize the tooltip.
+  $('#copy-button').tooltip();
+
+  // When the copy button is clicked, select the value of the text box, attempt
+  // to execute the copy command, and trigger event to update tooltip message
+  // to indicate whether the text was successfully copied.
+  $('#copy-button').bind('click', function() {
+    var input = document.querySelector('#copy-input');
+    input.select();
+    input.setSelectionRange(0, input.value.length + 1);
+    try {
+      var success = document.execCommand('copy');
+      var success = document.execCommand('copy');
+      console.log('copied'+ input.value);
+      if (success) {
+        $('#copy-button').trigger('copied', ['Copied!']);
+      } else {
+        $('#copy-button').trigger('copied', ['Copy with Ctrl-c']);
+      }
+    } catch (err) {
+      $('#copy-button').trigger('copied', ['Copy with Ctrl-c']);
+    }
+  });
+
+  // Handler for updating the tooltip message.
+  $('#copy-button').bind('copied', function(event, message) {
+    $(this).attr('title', message)
+        .tooltip('show')
+        .attr('title', "Copy to Clipboard")
+        .tooltip('show');
+  });
+});
+</script>
+
+{% endblock %}

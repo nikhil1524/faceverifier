@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ad782bf7-6b4f-4629-bf60-7156c4eed8fd" name="Default Changelist" comment="" />
+    <list default="true" id="ad782bf7-6b4f-4629-bf60-7156c4eed8fd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/faceverifier/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,12 +33,6 @@
         <item name="@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="faceverifier: schema" type="ebfa3cd1:MariaImplModel$Schema" />
-      </path>
     </expand>
     <select />
   </component>
@@ -49,10 +47,14 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1doM3bZfuMd6FQ5scjMCcBO1drm" />
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mariadb&#10;postgresql" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/faceverifier/static/images" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -214,12 +216,44 @@
       <workItem from="1595182019272" duration="502000" />
       <workItem from="1595182556975" duration="1012000" />
       <workItem from="1595185196028" duration="245000" />
-      <workItem from="1595218577436" duration="316000" />
+      <workItem from="1595218577436" duration="451000" />
+      <workItem from="1595230108140" duration="982000" />
     </task>
+    <task id="LOCAL-00001" summary="Adding the git ignore">
+      <created>1595230985120</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1595230985120</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Moving the readme file to the main site directory">
+      <created>1595231192311</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1595231192311</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Adding the git ignore" />
+    <MESSAGE value="Moving the readme file to the main site directory" />
+    <option name="LAST_COMMIT_MESSAGE" value="Moving the readme file to the main site directory" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

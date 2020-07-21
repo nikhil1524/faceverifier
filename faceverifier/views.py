@@ -13,6 +13,10 @@ from django.contrib.auth.hashers import make_password, check_password
 from django.contrib.auth import login as auth_login, authenticate, logout as auth_logout
 from django.contrib.auth.decorators import login_required
 from django.utils.crypto import get_random_string
+from keras_facenet import FaceNet
+
+
+embedder = FaceNet()
 
 def index(request):
     if request.method == 'POST':
@@ -99,30 +103,30 @@ def tryapi(request):
 @login_required
 def uploadimages(request):
     if request.method == 'POST':
-        form = CreateUserImageForm(request.POST)
+        form = CreateUserImageForm(request.POST or None, request.FILES)
         if form.is_valid():
             instance = form.save(commit=False)
-            instance.user_id = request.user
-            # image1 = str(UserImages.objects.last().image)
-            # image1 = image1.split("/")
-            # image1 = os.path.join(*image1)
-            # image1 = os.path.join(MEDIA_ROOT, image1)
+            instance.user_id= request.user
             instance.save()
-            # em1 = embedder.extract(image1, threshold=0.95)
-            # print(em1)
-            # if len(em1) > 1:
-            #     print("More than one face detected")
-            #     more = "More than one face detected"
-            #     return render(request, 'faceverifier/user/image.html', {'more_than_one_face_detected': more})
-            # elif len(em1) < 1:
-            #     print("No face detected")
-            #     no = "No face detected"
-            #     return render(request, 'basic_app/image.html', {'no_face_detected': no})
-            # else:
-            #     print("This is done good")
-            #     form.save()
-            #     img_obj = form.instance
-            #     return render(request, 'basic_app/image.html', {'form': form, 'img_obj': img_obj})
+            image1 = str(UserImages.objects.last().image)
+            print("This is image1 : " + image1)
+            image1 = image1.split("/")
+            image1 = os.path.join(*image1)
+            image1 = os.path.join(MEDIA_ROOT, image1)
+            print("This is image2 full : " + image1)
+            em1 = embedder.extract(image1, threshold=0.95)
+            if len(em1) > 1:
+                print("More than one face detected")
+                more = "More than one face detected"
+                return render(request, 'faceverifier/user/imageUpload.html', {'more_than_one_face_detected': more})
+            elif len(em1) < 1:
+                print("No face detected")
+                no = "No face detected"
+                return render(request, 'faceverifier/user/imageUpload.html', {'no_face_detected': no})
+            else:
+                print("This is done good")
+                img_obj = form.instance
+                return render(request, 'faceverifier/user/imageUpload.html', {'form': form, 'img_obj': img_obj})
 
     else:
         form = CreateUserImageForm()

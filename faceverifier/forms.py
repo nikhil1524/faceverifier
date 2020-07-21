@@ -50,9 +50,7 @@ class CreateUserImageForm(forms.ModelForm):
     client_id = forms.CharField(label="", max_length=50, widget=forms.TextInput
     (attrs={'class': 'form-control', 'placeholder': 'employee_id, student_id, customer_id'}
      )
-                                )
-    image = forms.FileInput(attrs={'class':'form-control', 'placeholder':'upload images'
-    })
+    )
 
     class Meta:
         model = UserImages

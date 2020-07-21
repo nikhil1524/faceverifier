@@ -14,12 +14,12 @@ class UserAPIKey(models.Model):
     createDate= models.DateTimeField(auto_now=True)
 
 
-def user_directory_path(userId, clientId):
-    return '{0}/{1}'.format(userId, clientId)
+def user_directory_path(instance, filename):
+    return '{0}/{1}/{2}'.format(instance.user_id.id, instance.client_id, filename)
 
 
 class UserImages(models.Model):
     user_id = models.ForeignKey(UserDetails, on_delete=models.CASCADE)
     client_id = models.CharField(max_length=8, blank=True)
-    image = models.ImageField(upload_to= user_directory_path(user_id, client_id),  max_length=1000, null=True, blank=True)
+    image = models.ImageField(upload_to=user_directory_path,  max_length=1000, null=True, blank=True)
 

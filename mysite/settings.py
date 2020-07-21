@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bootstrap4',
+    'fontawesome_5'
 
 ]
 
@@ -140,10 +141,11 @@ USE_TZ = True
 AUTH_USER_MODEL = "faceverifier.UserDetails"
 AUTHENTICATION_BACKENDS = ['faceverifier.custom.helper.EmailBackend']
 
+STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-STATIC_URL = '/static/'
+
 LOGIN_URL='/face/login'
 LOGIN_REDIRECT_URL='/face/login'
 

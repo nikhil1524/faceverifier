@@ -1,8 +1,10 @@
 {% extends 'bootstrap4/bootstrap4.html' %}
 {% load static %}
+{% load fontawesome_5 %}
 
 {% block bootstrap4_extra_head %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+   {% fontawesome_5_static %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 {% endblock %}
 

@@ -2,39 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad782bf7-6b4f-4629-bf60-7156c4eed8fd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2d30145d-6c42-4373-aa08-a2a4f943d9fb.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/2d30145d-6c42-4373-aa08-a2a4f943d9fb.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/mysite.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mysite.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/faceverifier/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/faceverifier/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/faceverifier/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/faceverifier/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/faceverifier/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/faceverifier/templates/faceverifier/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/faceverifier/templates/faceverifier/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/faceverifier/templates/faceverifier/bootstrap.html" beforeDir="false" afterPath="$PROJECT_DIR$/faceverifier/templates/faceverifier/bootstrap.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/faceverifier/templates/faceverifier/user/imageUpload.html" beforeDir="false" afterPath="$PROJECT_DIR$/faceverifier/templates/faceverifier/user/imageUpload.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/faceverifier/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/faceverifier/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/urls.py" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_DATA_SOURCES" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <option name="HIDDEN_KINDS">
-      <set />
-    </option>
-    <expand>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-    </expand>
-    <select />
   </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
@@ -51,36 +34,31 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1doM3bZfuMd6FQ5scjMCcBO1drm" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mariadb&#10;postgresql" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/faceverifier/static/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/faceverifier/templates/faceverifier/user" />
-      <recent name="$PROJECT_DIR$/faceverifier" />
-      <recent name="$PROJECT_DIR$/faceRecognizerAPI" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/faceverifier/static/images" />
       <recent name="$PROJECT_DIR$/static/images" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/faceverifier/templates/faceverifier/user" />
+      <recent name="$PROJECT_DIR$/faceverifier" />
+      <recent name="$PROJECT_DIR$/faceRecognizerAPI" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="mysite" type="Python.DjangoServer" factoryName="Django server">
@@ -107,26 +85,6 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="allServicesViewState">
-      <serviceView>
-        <treeState>
-          <expand>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@2857d7c6" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@2857d7c6" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@51921208" type="9fbbdea:ServiceModel$ServiceNode" />
-            </path>
-          </expand>
-          <select />
-        </treeState>
-      </serviceView>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -217,7 +175,11 @@
       <workItem from="1595182556975" duration="1012000" />
       <workItem from="1595185196028" duration="245000" />
       <workItem from="1595218577436" duration="451000" />
-      <workItem from="1595230108140" duration="982000" />
+      <workItem from="1595230108140" duration="1396000" />
+      <workItem from="1595261705949" duration="3000" />
+      <workItem from="1595261720807" duration="164000" />
+      <workItem from="1595338989063" duration="679000" />
+      <workItem from="1595349048619" duration="6725000" />
     </task>
     <task id="LOCAL-00001" summary="Adding the git ignore">
       <created>1595230985120</created>
@@ -233,11 +195,18 @@
       <option name="project" value="LOCAL" />
       <updated>1595231192311</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Adding few more files to .idea">
+      <created>1595231337614</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1595231337614</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -249,23 +218,35 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Adding the git ignore" />
     <MESSAGE value="Moving the readme file to the main site directory" />
-    <option name="LAST_COMMIT_MESSAGE" value="Moving the readme file to the main site directory" />
+    <MESSAGE value="Adding few more files to .idea" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding few more files to .idea" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="342" y="127" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595350634045">
+      <screen x="44" y="23" width="1396" height="877" />
+    </state>
+    <state x="342" y="127" key="#com.intellij.execution.impl.EditConfigurationsDialog/44.23.1396.877@44.23.1396.877" timestamp="1595350634045" />
+    <state x="407" y="213" width="670" height="676" key="search.everywhere.popup" timestamp="1595353978173">
+      <screen x="44" y="23" width="1396" height="877" />
+    </state>
+    <state x="407" y="213" width="670" height="676" key="search.everywhere.popup/44.23.1396.877@44.23.1396.877" timestamp="1595353978173" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/faceverifier/views.py</url>
-          <line>18</line>
+          <line>22</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/faceverifier/views.py</url>
-          <line>62</line>
+          <line>66</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">

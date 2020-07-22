@@ -1,6 +1,11 @@
 from django.urls import path
-
+from django.conf.urls import url, include
+from rest_framework import routers
 from . import views
+from .views import UploadedImageView
+
+# router = routers.DefaultRouter()
+# router.register('images', UploadedImagesViewSet, 'images')
 
 urlpatterns = [
     path('', views.index , name='index'),
@@ -12,4 +17,6 @@ urlpatterns = [
     path('setting', views.usersetting, name='settings'),
     path('license', views.userlicense, name='license'),
     path('logout',  views.logout, name='logout'),
+
+    url('api/image/', UploadedImageView.as_view()),
 ]

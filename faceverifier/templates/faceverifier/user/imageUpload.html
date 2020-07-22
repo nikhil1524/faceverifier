@@ -19,14 +19,16 @@
                                 {{ form.as_p }}
                                 <BR><input type="submit" class="btn btn-primary" name="" value="Upload"><br>
                             </form>
+                            <div class="mt-50">
                             {% if no_face_detected %}
                                 <br><br>
                                 <h5>No face Detected {% fa5_icon 'frown' 'far fa-lg' %}</h5>
                             {% elif more_than_one_face_detected %}
                                 <br> <h5>More than one face detected:(</h5>
                             {% elif img_obj %}
-                                <h5>Succesfully uploaded  {% fa5_icon 'smile' 'far fa-lg'%}</h5>
+                                <h5>Succesfully uploaded {% fa5_icon 'smile' 'far fa-lg' %}</h5>
                             {% endif %}
+                        </div>
                         </div>
                         <div class="col-6">
                             {% if img_obj %}

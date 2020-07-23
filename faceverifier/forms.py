@@ -50,6 +50,8 @@ class SignUpForm(UserCreationForm):
         }
         fields = {'email', 'first_name', 'last_name', 'password1', 'password2'}
 
+    field_order = {'email', 'first_name', 'last_name', 'password1', 'password2'}
+
 
 class CreateUserImageForm(forms.ModelForm):
     client_id = forms.CharField(label="", max_length=50, widget=forms.TextInput

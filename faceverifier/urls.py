@@ -16,6 +16,6 @@ urlpatterns = [
     path('setting', views.usersetting, name='settings'),
     path('license', views.userlicense, name='license'),
     path('logout',  views.logout, name='logout'),
-    url('api/image/', UploadedImageView.as_view()),
+    url('api/image/', UploadedImageView.as_view(), name='tryapi'),
 ]
 handler404 = views.error404

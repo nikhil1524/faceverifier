@@ -203,29 +203,28 @@ class UploadedImageView(generics.CreateAPIView):
 
     def post(self, request):
         uploadedimage = request.FILES['image']#request.data.get('image')
-        user_id = request.data.get('userId')
-        client_id = request.data.get('clientId')
+        email_id = request.data.get('email_Id')
+        client_id = request.data.get('client_Id')
         apikey = request.data.get('apiKey')
-        apikeyObject = UserAPIKey.objects.filter(user_id=user_id, apiKey=apikey).first()
+        user = UserDetails.objects.filter(email=email_id).first()
+        if user is not None:
+            apikeyObject = UserAPIKey.objects.filter(user_id=user.id, apiKey=apikey).first()
 
-        # check if the key is valid
-        if apikeyObject is None :
-            return Response({"failure":"apikey invalid"})
-        savedImage = UserImages.objects.filter(user_id=user_id, client_id=client_id).last()
+            # check if the key is valid
+            if apikeyObject is None:
+                return Response({"failure":"apikey invalid"})
+            savedImage = UserImages.objects.filter(user_id=user.id, client_id=client_id).last()
 
-        if savedImage is not None:
-            imagepath = os.path.join(MEDIA_ROOT, savedImage.image.name)
-            uploadedimagepath = handle_uploaded_file(uploadedimage)
-            # print('saving')
-            # time.sleep(2.4)
-            # print('saved')
-            verification = verifyImage(imagepath, uploadedimagepath)
-            # once the image is processed delete it
-            default_storage.delete(uploadedimagepath)
+            if savedImage is not None:
+                imagepath = os.path.join(MEDIA_ROOT, savedImage.image.name)
+                uploadedimagepath = handle_uploaded_file(uploadedimage)
+                verification = verifyImage(imagepath, uploadedimagepath)
+                # once the image is processed delete it
+                default_storage.delete(uploadedimagepath)
 
-            if verification:
-                return Response({"success": "Image matched the given image"})
-            else:
-                return Response({"failure": "Image not matched"})
-
-        return Response({"failure": "have you saved the image earlier"})
+                if verification:
+                    return Response({"success": "Image matched the given image"})
+                else:
+                    return Response({"failure": "Image not matched"})
+        else:
+            return Response({"failure": "email not registered"})

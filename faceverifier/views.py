@@ -1,5 +1,9 @@
 import os
 
+import time
+from django.core.files.base import ContentFile
+from django.core.files.storage import default_storage
+from PIL import Image
 from django.core.exceptions import ValidationError
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, redirect
@@ -128,7 +132,7 @@ def uploadimages(request):
             image1 = os.path.join(*image1)
             image1 = os.path.join(MEDIA_ROOT, image1)
             print("This is image2 full : " + image1)
-            em1 = embedder.extract(image1, threshold=0.95)
+            em1 = embedder.extract(image1, theshold=0.95)
             if len(em1) > 1:
                 print("More than one face detected")
                 more = "More than one face detected"
@@ -175,28 +179,41 @@ class ImageUploadParser(FileUploadParser):
     media_type = 'image/*'
 
 
+def handle_uploaded_file(f):
+        image1 = '/temp/random/'
+        image1 = image1.split("/")
+        image1 = os.path.join(*image1)
+        dir = os.path.join(MEDIA_ROOT, image1, '123.jpeg')
+        path = default_storage.save(dir, ContentFile(f.read()))
+        return path
+
+
 class UploadedImageView(generics.CreateAPIView):
     parser_class = (ImageUploadParser,MultiPartParser)
     serializer_class = UploadedImageSerializer
 
     def post(self, request):
-        uploadedimage = request.data.get('image')
+        uploadedimage = request.FILES['image']#request.data.get('image')
         user_id = request.data.get('userId')
         client_id = request.data.get('clientId')
         apikey = request.data.get('apiKey')
         apikeyObject = UserAPIKey.objects.filter(user_id=user_id, apiKey=apikey).first()
 
         # check if the key is valid
-        if apikeyObject is None:
+        if apikeyObject is None :
             return Response({"failure":"apikey invalid"})
-
-        # check if client image matches with the saved image
-
         savedImage = UserImages.objects.filter(user_id=user_id, client_id=client_id).last()
 
         if savedImage is not None:
-            image = savedImage.image
-            verification = verifyImage(image, uploadedimage)
+            imagepath = os.path.join(MEDIA_ROOT, savedImage.image.name)
+            uploadedimagepath = handle_uploaded_file(uploadedimage)
+            # print('saving')
+            # time.sleep(2.4)
+            # print('saved')
+            verification = verifyImage(imagepath, uploadedimagepath)
+            # once the image is processed delete it
+            #default_storage.delete(dir)
+
             if verification:
                 return Response({"success": "Image matched the given image"})
             else:

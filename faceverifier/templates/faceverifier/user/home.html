@@ -3,11 +3,29 @@
 {% load static %}
 
 {% block content %}
-    <h1> Home page</h1>
+    <h1> How it works?</h1>
     <div class="row">
-    {% if request.user.is_authenticated %}
-        hi
-        {{ request.user.username }}
-    {% endif %}
+        {% if request.user.is_authenticated %}
+            <div class="container">
+                <div class="row">
+                    Image recognizer makes it easy to add image verificatoin to your existing applications using proven,
+                    highly scalable, deep learning technology that requires no machine learning expertise to use.
+                    With this image Recognition, you can easily check if the image verifies with your customer, students
+                    ,employees.
+
+                    Image Recognition also provides highly accurate facial analysis and facial search capabilities that
+                    you can use to detect, analyze, and compare faces for a wide variety of user verification, which
+                    can be used for the public safety use cases.
+                </div>
+                <div class="row mt-50">
+                        <div class="col-6 ">
+                            <img src="{% static 'images/image_v1.jpeg' %}" class="homepage-img" alt="page not found">
+                        </div>
+                        <div class="col-6">
+                             <img src="{% static 'images/image_v2.jpg' %}" class="homepage-img" style="height:335px;" alt="page not found">
+                        </div>
+                </div>
+            </div>
+        {% endif %}
     </div>
 {% endblock %}

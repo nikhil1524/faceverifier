@@ -20,3 +20,4 @@ urlpatterns = [
 
     url('api/image/', UploadedImageView.as_view()),
 ]
+handler404 = views.error404

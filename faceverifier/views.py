@@ -118,6 +118,10 @@ def tryapi(request):
     return render(request, 'faceverifier/user/tryapi.html')
 
 
+def error404(request, exception):
+    return render(request, 'faceverifier/404.html')
+
+
 @login_required
 def uploadimages(request):
     if request.method == 'POST':

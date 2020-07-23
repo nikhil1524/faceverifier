@@ -73,7 +73,6 @@ def userlicense(request):
 
 def login(request):
     if request.method == 'POST':
-
         form = LoginForm(request.POST)
         if form.is_valid():
             user = authenticate(username=form.cleaned_data.get('email'), password=form.cleaned_data.get('password'))
@@ -95,13 +94,18 @@ def signup(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)
         if form.is_valid():
-            user = form.save()
-            user.username = form.cleaned_data.get('email')
-            user.save()
-            raw_password = form.cleaned_data.get('password1')
-            user = authenticate(username=user.username, password=raw_password)
-            auth_login(request, user)
-            return redirect('home')
+            existingEmail = UserDetails.objects.filter(username=form.cleaned_data.get('email')).first()
+            if existingEmail is None:
+                instance = form.save(commit=False)
+                instance.username = form.cleaned_data.get('email')
+                instance.save()
+                raw_password = form.cleaned_data.get('password1')
+                user = authenticate(username=instance.username, password=raw_password)
+                auth_login(request, user)
+                return redirect('home')
+            else:
+                form.add_error('email', 'You have already signed up please login')
+
     else:
         form = SignUpForm()
     # todo: sequence of the form

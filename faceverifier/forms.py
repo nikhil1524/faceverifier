@@ -41,8 +41,13 @@ class SignUpForm(UserCreationForm):
         "class": "form-control mb-10", "placeholder": "Confirm Password"
     }))
 
+
+
     class Meta:
         model = UserDetails
+        widgets = {
+            'username': forms.HiddenInput(),
+        }
         fields = {'email', 'first_name', 'last_name', 'password1', 'password2'}
 
 

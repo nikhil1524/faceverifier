@@ -179,11 +179,12 @@ class ImageUploadParser(FileUploadParser):
     media_type = 'image/*'
 
 
-def handle_uploaded_file(f):
+def handle_uploaded_file(f ):
         image1 = '/temp/random/'
+        filename = get_random_string(5) +"."+ f.name.split(".")[1];
         image1 = image1.split("/")
         image1 = os.path.join(*image1)
-        dir = os.path.join(MEDIA_ROOT, image1, '123.jpeg')
+        dir = os.path.join(MEDIA_ROOT, image1, filename)
         path = default_storage.save(dir, ContentFile(f.read()))
         return path
 
@@ -212,7 +213,7 @@ class UploadedImageView(generics.CreateAPIView):
             # print('saved')
             verification = verifyImage(imagepath, uploadedimagepath)
             # once the image is processed delete it
-            #default_storage.delete(dir)
+            default_storage.delete(uploadedimagepath)
 
             if verification:
                 return Response({"success": "Image matched the given image"})

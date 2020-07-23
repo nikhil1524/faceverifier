@@ -3,9 +3,20 @@
     margin-bottom: 5%;
 }
 
+.signup-form-2{
+     padding: 5%;
+    background: #1c70dc;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+
+.signup-form-2 h3{
+    text-align: center;
+    color: #fff;
+}
+
 .login-form-2{
     padding: 5%;
-    background: #0062cc;
+    background: #1c70dc;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
 }
 .login-form-2 h3{
@@ -83,6 +94,9 @@
 
 .mt-10{
     margin-top: 10px;
+}
+.mb-10{
+    margin-bottom: 10px;
 }
 
 .w-30{
